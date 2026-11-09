@@ -1,0 +1,8 @@
+{
+  "schema": "keyharbor-project-v1",
+  "title": "Release copy review",
+  "sourceName": "Reference",
+  "targetName": "Candidate",
+  "sourceText": "{\n  \"account\": {\n    \"greeting\": \"Hello, {{user.name}}!\",\n    \"saved\": \"Saved {{item}}.\"\n  },\n  \"checkout\": {\n    \"pay\": \"Pay now\",\n    \"cancel\": \"Cancel\"\n  },\n  \"menu.title\": \"Menu\",\n  \"empty\": \"A label\",\n  \"notice\": \"Read <strong>{{name}}</strong>\",\n  \"quantity\": \"{count, plural, one {item} other {items}}\"\n}",
+  "targetText": "{\n  \"account\": {\n    \"greeting\": \"Welcome, {{user.name}}!\",\n    \"saved\": \"Saved {{modelId}}.\"\n  },\n  \"checkout\": {\n    \"pay\": \"Pay now\"\n  },\n  \"menu.title\": \"Menu\",\n  \"empty\": \" \",\n  \"legacy\": \"Older entry\",\n  \"notice\": \"Read <strong>{{-name}}</strong>\",\n  \"quantity\": \"{count, plural, one {item} other {items}}\"\n}"
+}

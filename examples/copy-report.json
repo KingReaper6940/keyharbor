@@ -1,0 +1,409 @@
+{
+  "schema": "keyharbor-report-v1",
+  "scope": "Nested string dictionaries and the documented default-interpolation subset; not translation quality or runtime validation.",
+  "project": {
+    "schema": "keyharbor-project-v1",
+    "title": "Release copy review",
+    "sourceName": "Reference",
+    "targetName": "Candidate",
+    "sourceText": "{\n  \"account\": {\n    \"greeting\": \"Hello, {{user.name}}!\",\n    \"saved\": \"Saved {{item}}.\"\n  },\n  \"checkout\": {\n    \"pay\": \"Pay now\",\n    \"cancel\": \"Cancel\"\n  },\n  \"menu.title\": \"Menu\",\n  \"empty\": \"A label\",\n  \"notice\": \"Read <strong>{{name}}</strong>\",\n  \"quantity\": \"{count, plural, one {item} other {items}}\"\n}",
+    "targetText": "{\n  \"account\": {\n    \"greeting\": \"Welcome, {{user.name}}!\",\n    \"saved\": \"Saved {{modelId}}.\"\n  },\n  \"checkout\": {\n    \"pay\": \"Pay now\"\n  },\n  \"menu.title\": \"Menu\",\n  \"empty\": \" \",\n  \"legacy\": \"Older entry\",\n  \"notice\": \"Read <strong>{{-name}}</strong>\",\n  \"quantity\": \"{count, plural, one {item} other {items}}\"\n}"
+  },
+  "summary": {
+    "sourceMessages": 8,
+    "targetMessages": 8,
+    "records": 9,
+    "attention": 4,
+    "review": 2,
+    "info": 2,
+    "checked": 1,
+    "placeholderPairsChecked": 6,
+    "placeholderPairsSkipped": 1
+  },
+  "records": [
+    {
+      "pointer": "/account/greeting",
+      "segments": [
+        "account",
+        "greeting"
+      ],
+      "type": "message",
+      "level": "checked",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValue": "Hello, {{user.name}}!",
+      "targetValue": "Welcome, {{user.name}}!",
+      "sourceCovered": 1,
+      "targetCovered": 1,
+      "placeholders": {
+        "source": {
+          "complete": true,
+          "tokens": [
+            {
+              "name": "user.name",
+              "escaped": 1,
+              "unescaped": 0
+            }
+          ],
+          "reasons": [],
+          "markup": false
+        },
+        "target": {
+          "complete": true,
+          "tokens": [
+            {
+              "name": "user.name",
+              "escaped": 1,
+              "unescaped": 0
+            }
+          ],
+          "reasons": [],
+          "markup": false
+        },
+        "checked": true,
+        "issues": []
+      },
+      "issues": []
+    },
+    {
+      "pointer": "/account/saved",
+      "segments": [
+        "account",
+        "saved"
+      ],
+      "type": "message",
+      "level": "attention",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValue": "Saved {{item}}.",
+      "targetValue": "Saved {{modelId}}.",
+      "sourceCovered": 1,
+      "targetCovered": 1,
+      "placeholders": {
+        "source": {
+          "complete": true,
+          "tokens": [
+            {
+              "name": "item",
+              "escaped": 1,
+              "unescaped": 0
+            }
+          ],
+          "reasons": [],
+          "markup": false
+        },
+        "target": {
+          "complete": true,
+          "tokens": [
+            {
+              "name": "modelId",
+              "escaped": 1,
+              "unescaped": 0
+            }
+          ],
+          "reasons": [],
+          "markup": false
+        },
+        "checked": true,
+        "issues": [
+          {
+            "code": "missing-variable",
+            "level": "attention",
+            "detail": "Target is missing variable item."
+          },
+          {
+            "code": "extra-variable",
+            "level": "attention",
+            "detail": "Target adds variable modelId."
+          }
+        ]
+      },
+      "issues": [
+        {
+          "code": "missing-variable",
+          "level": "attention",
+          "detail": "Target is missing variable item."
+        },
+        {
+          "code": "extra-variable",
+          "level": "attention",
+          "detail": "Target adds variable modelId."
+        }
+      ]
+    },
+    {
+      "pointer": "/checkout/cancel",
+      "segments": [
+        "checkout",
+        "cancel"
+      ],
+      "type": "missing",
+      "level": "attention",
+      "sourcePresent": true,
+      "targetPresent": false,
+      "sourceValue": "Cancel",
+      "targetValue": null,
+      "sourceCovered": 1,
+      "targetCovered": 0,
+      "placeholders": null,
+      "issues": [
+        {
+          "code": "missing",
+          "level": "attention",
+          "detail": "Path is absent from the target."
+        }
+      ]
+    },
+    {
+      "pointer": "/checkout/pay",
+      "segments": [
+        "checkout",
+        "pay"
+      ],
+      "type": "message",
+      "level": "info",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValue": "Pay now",
+      "targetValue": "Pay now",
+      "sourceCovered": 1,
+      "targetCovered": 1,
+      "placeholders": {
+        "source": {
+          "complete": true,
+          "tokens": [],
+          "reasons": [],
+          "markup": false
+        },
+        "target": {
+          "complete": true,
+          "tokens": [],
+          "reasons": [],
+          "markup": false
+        },
+        "checked": true,
+        "issues": []
+      },
+      "issues": [
+        {
+          "code": "same-text",
+          "level": "info",
+          "detail": "Text is identical. This may be intentional; it is not proof of a missing translation."
+        }
+      ]
+    },
+    {
+      "pointer": "/empty",
+      "segments": [
+        "empty"
+      ],
+      "type": "message",
+      "level": "attention",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValue": "A label",
+      "targetValue": " ",
+      "sourceCovered": 1,
+      "targetCovered": 1,
+      "placeholders": {
+        "source": {
+          "complete": true,
+          "tokens": [],
+          "reasons": [],
+          "markup": false
+        },
+        "target": {
+          "complete": true,
+          "tokens": [],
+          "reasons": [],
+          "markup": false
+        },
+        "checked": true,
+        "issues": []
+      },
+      "issues": [
+        {
+          "code": "blank-target",
+          "level": "attention",
+          "detail": "A nonblank source has a blank target."
+        }
+      ]
+    },
+    {
+      "pointer": "/legacy",
+      "segments": [
+        "legacy"
+      ],
+      "type": "extra",
+      "level": "attention",
+      "sourcePresent": false,
+      "targetPresent": true,
+      "sourceValue": null,
+      "targetValue": "Older entry",
+      "sourceCovered": 0,
+      "targetCovered": 1,
+      "placeholders": null,
+      "issues": [
+        {
+          "code": "extra",
+          "level": "attention",
+          "detail": "Path exists only in the target."
+        }
+      ]
+    },
+    {
+      "pointer": "/menu.title",
+      "segments": [
+        "menu.title"
+      ],
+      "type": "message",
+      "level": "info",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValue": "Menu",
+      "targetValue": "Menu",
+      "sourceCovered": 1,
+      "targetCovered": 1,
+      "placeholders": {
+        "source": {
+          "complete": true,
+          "tokens": [],
+          "reasons": [],
+          "markup": false
+        },
+        "target": {
+          "complete": true,
+          "tokens": [],
+          "reasons": [],
+          "markup": false
+        },
+        "checked": true,
+        "issues": []
+      },
+      "issues": [
+        {
+          "code": "same-text",
+          "level": "info",
+          "detail": "Text is identical. This may be intentional; it is not proof of a missing translation."
+        }
+      ]
+    },
+    {
+      "pointer": "/notice",
+      "segments": [
+        "notice"
+      ],
+      "type": "message",
+      "level": "review",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValue": "Read <strong>{{name}}</strong>",
+      "targetValue": "Read <strong>{{-name}}</strong>",
+      "sourceCovered": 1,
+      "targetCovered": 1,
+      "placeholders": {
+        "source": {
+          "complete": true,
+          "tokens": [
+            {
+              "name": "name",
+              "escaped": 1,
+              "unescaped": 0
+            }
+          ],
+          "reasons": [],
+          "markup": true
+        },
+        "target": {
+          "complete": true,
+          "tokens": [
+            {
+              "name": "name",
+              "escaped": 0,
+              "unescaped": 1
+            }
+          ],
+          "reasons": [],
+          "markup": true
+        },
+        "checked": true,
+        "issues": [
+          {
+            "code": "markup",
+            "level": "review",
+            "detail": "Markup appears in a message; tag structure, attributes and runtime rendering are not validated."
+          },
+          {
+            "code": "escape-marker",
+            "level": "review",
+            "detail": "Escaped/unescaped marker use differs for name; runtime escaping options are not assessed."
+          }
+        ]
+      },
+      "issues": [
+        {
+          "code": "markup",
+          "level": "review",
+          "detail": "Markup appears in a message; tag structure, attributes and runtime rendering are not validated."
+        },
+        {
+          "code": "escape-marker",
+          "level": "review",
+          "detail": "Escaped/unescaped marker use differs for name; runtime escaping options are not assessed."
+        }
+      ]
+    },
+    {
+      "pointer": "/quantity",
+      "segments": [
+        "quantity"
+      ],
+      "type": "message",
+      "level": "review",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValue": "{count, plural, one {item} other {items}}",
+      "targetValue": "{count, plural, one {item} other {items}}",
+      "sourceCovered": 1,
+      "targetCovered": 1,
+      "placeholders": {
+        "source": {
+          "complete": false,
+          "tokens": [],
+          "reasons": [
+            "Brace syntax outside supported interpolation"
+          ],
+          "markup": false
+        },
+        "target": {
+          "complete": false,
+          "tokens": [],
+          "reasons": [
+            "Brace syntax outside supported interpolation"
+          ],
+          "markup": false
+        },
+        "checked": false,
+        "issues": [
+          {
+            "code": "manual-syntax",
+            "level": "review",
+            "detail": "Placeholder comparison skipped: Brace syntax outside supported interpolation."
+          }
+        ]
+      },
+      "issues": [
+        {
+          "code": "manual-syntax",
+          "level": "review",
+          "detail": "Placeholder comparison skipped: Brace syntax outside supported interpolation."
+        },
+        {
+          "code": "same-text",
+          "level": "info",
+          "detail": "Text is identical. This may be intentional; it is not proof of a missing translation."
+        }
+      ]
+    }
+  ]
+}

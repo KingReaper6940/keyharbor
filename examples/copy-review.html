@@ -1,0 +1,200 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Release copy review · locale review</title><style>body{font:15px/1.6 system-ui,sans-serif;max-width:1100px;margin:30px auto;padding:20px;color:#283344}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;background:#f1f3f6;padding:12px}section{border:1px solid #aab4c5;padding:18px;margin:20px 0}h1,h2,h3,p,li{overflow-wrap:anywhere}h2{font-size:17px}h3{font-size:14px}dl{font-size:13px}thead{display:table-header-group}@media print{body{margin:0}h2,h3{break-after:avoid}}</style><body><h1>Release copy review</h1><p>Reference → Candidate</p><p>8 source / 8 target messages. 9 records: 4 attention, 2 manual review, 2 information, 1 without listed issues.</p><p>Nested string dictionaries and the documented default-interpolation subset; not translation quality or runtime validation. Identical text and occurrence-count differences can be intentional. Custom delimiters and all unsupported formats are not inferred. Markup is literal, not rendered or validated.</p><p>6 matched message pairs received supported-placeholder comparison; 1 pairs skipped. Missing, extra and shape-conflict records are not placeholder-checked.</p><section><h2>&quot;/account/greeting&quot; · checked</h2><p>message · source messages covered 1 / target messages covered 1</p><ul></ul><h3>Source · Reference</h3><pre>&quot;Hello, {{user.name}}!&quot;</pre><h3>Target · Candidate</h3><pre>&quot;Welcome, {{user.name}}!&quot;</pre><h3>Placeholder scan and coverage</h3><pre>{
+  &quot;source&quot;: {
+    &quot;complete&quot;: true,
+    &quot;tokens&quot;: [
+      {
+        &quot;name&quot;: &quot;user.name&quot;,
+        &quot;escaped&quot;: 1,
+        &quot;unescaped&quot;: 0
+      }
+    ],
+    &quot;reasons&quot;: [],
+    &quot;markup&quot;: false
+  },
+  &quot;target&quot;: {
+    &quot;complete&quot;: true,
+    &quot;tokens&quot;: [
+      {
+        &quot;name&quot;: &quot;user.name&quot;,
+        &quot;escaped&quot;: 1,
+        &quot;unescaped&quot;: 0
+      }
+    ],
+    &quot;reasons&quot;: [],
+    &quot;markup&quot;: false
+  },
+  &quot;checked&quot;: true,
+  &quot;issues&quot;: []
+}</pre></section><section><h2>&quot;/account/saved&quot; · attention</h2><p>message · source messages covered 1 / target messages covered 1</p><ul><li>attention · missing-variable: Target is missing variable item.</li><li>attention · extra-variable: Target adds variable modelId.</li></ul><h3>Source · Reference</h3><pre>&quot;Saved {{item}}.&quot;</pre><h3>Target · Candidate</h3><pre>&quot;Saved {{modelId}}.&quot;</pre><h3>Placeholder scan and coverage</h3><pre>{
+  &quot;source&quot;: {
+    &quot;complete&quot;: true,
+    &quot;tokens&quot;: [
+      {
+        &quot;name&quot;: &quot;item&quot;,
+        &quot;escaped&quot;: 1,
+        &quot;unescaped&quot;: 0
+      }
+    ],
+    &quot;reasons&quot;: [],
+    &quot;markup&quot;: false
+  },
+  &quot;target&quot;: {
+    &quot;complete&quot;: true,
+    &quot;tokens&quot;: [
+      {
+        &quot;name&quot;: &quot;modelId&quot;,
+        &quot;escaped&quot;: 1,
+        &quot;unescaped&quot;: 0
+      }
+    ],
+    &quot;reasons&quot;: [],
+    &quot;markup&quot;: false
+  },
+  &quot;checked&quot;: true,
+  &quot;issues&quot;: [
+    {
+      &quot;code&quot;: &quot;missing-variable&quot;,
+      &quot;level&quot;: &quot;attention&quot;,
+      &quot;detail&quot;: &quot;Target is missing variable item.&quot;
+    },
+    {
+      &quot;code&quot;: &quot;extra-variable&quot;,
+      &quot;level&quot;: &quot;attention&quot;,
+      &quot;detail&quot;: &quot;Target adds variable modelId.&quot;
+    }
+  ]
+}</pre></section><section><h2>&quot;/checkout/cancel&quot; · attention</h2><p>missing · source messages covered 1 / target messages covered 0</p><ul><li>attention · missing: Path is absent from the target.</li></ul><h3>Source · Reference</h3><pre>&quot;Cancel&quot;</pre><h3>Target · Candidate</h3><pre>[absent]</pre></section><section><h2>&quot;/checkout/pay&quot; · info</h2><p>message · source messages covered 1 / target messages covered 1</p><ul><li>info · same-text: Text is identical. This may be intentional; it is not proof of a missing translation.</li></ul><h3>Source · Reference</h3><pre>&quot;Pay now&quot;</pre><h3>Target · Candidate</h3><pre>&quot;Pay now&quot;</pre><h3>Placeholder scan and coverage</h3><pre>{
+  &quot;source&quot;: {
+    &quot;complete&quot;: true,
+    &quot;tokens&quot;: [],
+    &quot;reasons&quot;: [],
+    &quot;markup&quot;: false
+  },
+  &quot;target&quot;: {
+    &quot;complete&quot;: true,
+    &quot;tokens&quot;: [],
+    &quot;reasons&quot;: [],
+    &quot;markup&quot;: false
+  },
+  &quot;checked&quot;: true,
+  &quot;issues&quot;: []
+}</pre></section><section><h2>&quot;/empty&quot; · attention</h2><p>message · source messages covered 1 / target messages covered 1</p><ul><li>attention · blank-target: A nonblank source has a blank target.</li></ul><h3>Source · Reference</h3><pre>&quot;A label&quot;</pre><h3>Target · Candidate</h3><pre>&quot; &quot;</pre><h3>Placeholder scan and coverage</h3><pre>{
+  &quot;source&quot;: {
+    &quot;complete&quot;: true,
+    &quot;tokens&quot;: [],
+    &quot;reasons&quot;: [],
+    &quot;markup&quot;: false
+  },
+  &quot;target&quot;: {
+    &quot;complete&quot;: true,
+    &quot;tokens&quot;: [],
+    &quot;reasons&quot;: [],
+    &quot;markup&quot;: false
+  },
+  &quot;checked&quot;: true,
+  &quot;issues&quot;: []
+}</pre></section><section><h2>&quot;/legacy&quot; · attention</h2><p>extra · source messages covered 0 / target messages covered 1</p><ul><li>attention · extra: Path exists only in the target.</li></ul><h3>Source · Reference</h3><pre>[absent]</pre><h3>Target · Candidate</h3><pre>&quot;Older entry&quot;</pre></section><section><h2>&quot;/menu.title&quot; · info</h2><p>message · source messages covered 1 / target messages covered 1</p><ul><li>info · same-text: Text is identical. This may be intentional; it is not proof of a missing translation.</li></ul><h3>Source · Reference</h3><pre>&quot;Menu&quot;</pre><h3>Target · Candidate</h3><pre>&quot;Menu&quot;</pre><h3>Placeholder scan and coverage</h3><pre>{
+  &quot;source&quot;: {
+    &quot;complete&quot;: true,
+    &quot;tokens&quot;: [],
+    &quot;reasons&quot;: [],
+    &quot;markup&quot;: false
+  },
+  &quot;target&quot;: {
+    &quot;complete&quot;: true,
+    &quot;tokens&quot;: [],
+    &quot;reasons&quot;: [],
+    &quot;markup&quot;: false
+  },
+  &quot;checked&quot;: true,
+  &quot;issues&quot;: []
+}</pre></section><section><h2>&quot;/notice&quot; · review</h2><p>message · source messages covered 1 / target messages covered 1</p><ul><li>review · markup: Markup appears in a message; tag structure, attributes and runtime rendering are not validated.</li><li>review · escape-marker: Escaped/unescaped marker use differs for name; runtime escaping options are not assessed.</li></ul><h3>Source · Reference</h3><pre>&quot;Read &lt;strong&gt;{{name}}&lt;/strong&gt;&quot;</pre><h3>Target · Candidate</h3><pre>&quot;Read &lt;strong&gt;{{-name}}&lt;/strong&gt;&quot;</pre><h3>Placeholder scan and coverage</h3><pre>{
+  &quot;source&quot;: {
+    &quot;complete&quot;: true,
+    &quot;tokens&quot;: [
+      {
+        &quot;name&quot;: &quot;name&quot;,
+        &quot;escaped&quot;: 1,
+        &quot;unescaped&quot;: 0
+      }
+    ],
+    &quot;reasons&quot;: [],
+    &quot;markup&quot;: true
+  },
+  &quot;target&quot;: {
+    &quot;complete&quot;: true,
+    &quot;tokens&quot;: [
+      {
+        &quot;name&quot;: &quot;name&quot;,
+        &quot;escaped&quot;: 0,
+        &quot;unescaped&quot;: 1
+      }
+    ],
+    &quot;reasons&quot;: [],
+    &quot;markup&quot;: true
+  },
+  &quot;checked&quot;: true,
+  &quot;issues&quot;: [
+    {
+      &quot;code&quot;: &quot;markup&quot;,
+      &quot;level&quot;: &quot;review&quot;,
+      &quot;detail&quot;: &quot;Markup appears in a message; tag structure, attributes and runtime rendering are not validated.&quot;
+    },
+    {
+      &quot;code&quot;: &quot;escape-marker&quot;,
+      &quot;level&quot;: &quot;review&quot;,
+      &quot;detail&quot;: &quot;Escaped/unescaped marker use differs for name; runtime escaping options are not assessed.&quot;
+    }
+  ]
+}</pre></section><section><h2>&quot;/quantity&quot; · review</h2><p>message · source messages covered 1 / target messages covered 1</p><ul><li>review · manual-syntax: Placeholder comparison skipped: Brace syntax outside supported interpolation.</li><li>info · same-text: Text is identical. This may be intentional; it is not proof of a missing translation.</li></ul><h3>Source · Reference</h3><pre>&quot;{count, plural, one {item} other {items}}&quot;</pre><h3>Target · Candidate</h3><pre>&quot;{count, plural, one {item} other {items}}&quot;</pre><h3>Placeholder scan and coverage</h3><pre>{
+  &quot;source&quot;: {
+    &quot;complete&quot;: false,
+    &quot;tokens&quot;: [],
+    &quot;reasons&quot;: [
+      &quot;Brace syntax outside supported interpolation&quot;
+    ],
+    &quot;markup&quot;: false
+  },
+  &quot;target&quot;: {
+    &quot;complete&quot;: false,
+    &quot;tokens&quot;: [],
+    &quot;reasons&quot;: [
+      &quot;Brace syntax outside supported interpolation&quot;
+    ],
+    &quot;markup&quot;: false
+  },
+  &quot;checked&quot;: false,
+  &quot;issues&quot;: [
+    {
+      &quot;code&quot;: &quot;manual-syntax&quot;,
+      &quot;level&quot;: &quot;review&quot;,
+      &quot;detail&quot;: &quot;Placeholder comparison skipped: Brace syntax outside supported interpolation.&quot;
+    }
+  ]
+}</pre></section><h2>Original source dictionary</h2><pre>{
+  &quot;account&quot;: {
+    &quot;greeting&quot;: &quot;Hello, {{user.name}}!&quot;,
+    &quot;saved&quot;: &quot;Saved {{item}}.&quot;
+  },
+  &quot;checkout&quot;: {
+    &quot;pay&quot;: &quot;Pay now&quot;,
+    &quot;cancel&quot;: &quot;Cancel&quot;
+  },
+  &quot;menu.title&quot;: &quot;Menu&quot;,
+  &quot;empty&quot;: &quot;A label&quot;,
+  &quot;notice&quot;: &quot;Read &lt;strong&gt;{{name}}&lt;/strong&gt;&quot;,
+  &quot;quantity&quot;: &quot;{count, plural, one {item} other {items}}&quot;
+}</pre><h2>Original target dictionary</h2><pre>{
+  &quot;account&quot;: {
+    &quot;greeting&quot;: &quot;Welcome, {{user.name}}!&quot;,
+    &quot;saved&quot;: &quot;Saved {{modelId}}.&quot;
+  },
+  &quot;checkout&quot;: {
+    &quot;pay&quot;: &quot;Pay now&quot;
+  },
+  &quot;menu.title&quot;: &quot;Menu&quot;,
+  &quot;empty&quot;: &quot; &quot;,
+  &quot;legacy&quot;: &quot;Older entry&quot;,
+  &quot;notice&quot;: &quot;Read &lt;strong&gt;{{-name}}&lt;/strong&gt;&quot;,
+  &quot;quantity&quot;: &quot;{count, plural, one {item} other {items}}&quot;
+}</pre><footer>Keyharbor · complete read-only report, independent of on-screen filters. Open project JSON to resume; HTML is not an import format. Browser Print / Save as PDF.</footer></body></html>
