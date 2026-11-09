@@ -2,6 +2,8 @@
 
 **Keep the words different. Keep the wiring aligned.**
 
+[Open Keyharbor](https://keyharbor.vercel.app)
+
 Review two nested JSON locale dictionaries locally. Find missing paths, blank translations, object/string shape changes and supported interpolation differences, with a complete read-only receipt.
 
 ![An actual exported review summary](examples/copy-summary.svg)
